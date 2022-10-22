@@ -1,4 +1,4 @@
-package leetcode.legostin.easy.model
+package leetcode.legostin.model
 
 data class ListNode (
     val value: Int = 0,

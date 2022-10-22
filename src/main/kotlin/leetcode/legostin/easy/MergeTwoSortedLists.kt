@@ -1,6 +1,6 @@
 package leetcode.legostin.easy
 
-import leetcode.legostin.easy.model.ListNode
+import leetcode.legostin.model.ListNode
 
 /**
  * Merge two sorted linked lists and return it as a new sorted list.

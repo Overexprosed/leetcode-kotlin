@@ -1,6 +1,6 @@
 package leetcode.legostin.easy
 
-import leetcode.legostin.easy.model.ListNode
+import leetcode.legostin.model.ListNode
 
 /**
  * Given the head of a singly linked list, return the middle node of the linked list.

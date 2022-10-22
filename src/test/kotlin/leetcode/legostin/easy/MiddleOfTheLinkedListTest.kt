@@ -1,6 +1,6 @@
 package leetcode.legostin.easy
 
-import leetcode.legostin.easy.model.ListNode
+import leetcode.legostin.model.ListNode
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
 

@@ -1,6 +1,6 @@
 package leetcode.legostin.easy
 
-import leetcode.legostin.easy.model.ListNode
+import leetcode.legostin.model.ListNode
 
 /**
  * Given the head of a singly linked list, reverse the list, and return the reversed list.
