@@ -1,4 +1,4 @@
-package leetcode.legostin.middle
+package leetcode.legostin.medium
 
 import leetcode.legostin.model.ListNode
 
