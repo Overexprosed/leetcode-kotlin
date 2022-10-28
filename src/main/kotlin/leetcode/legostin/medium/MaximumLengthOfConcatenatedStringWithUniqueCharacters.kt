@@ -33,6 +33,7 @@ class MaximumLengthOfConcatenatedStringWithUniqueCharacters {
     }
 
     private fun isUnique(str: String): Boolean {
+        // dumb commit...
         if (str.isEmpty()) return true
 
         val alpha = IntArray(26)
