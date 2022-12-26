@@ -24,7 +24,7 @@ class DisappearedNumbers {
         for (i in nums.indices) {
             val value = nums[i]
             if (value > 0) {
-                result.add(i + 1)
+                result.add(i + 1) // we can to this because nums is continues array from 1 to n
             }
         }
         return result
