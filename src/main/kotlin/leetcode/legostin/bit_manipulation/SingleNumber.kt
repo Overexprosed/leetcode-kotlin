@@ -1,4 +1,4 @@
-package leetcode.legostin.bit
+package leetcode.legostin.bit_manipulation
 
 /**
  * Given a non-empty array of integers nums, every element appears TWICE except for one.

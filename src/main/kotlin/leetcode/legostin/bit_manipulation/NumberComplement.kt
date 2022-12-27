@@ -1,4 +1,4 @@
-package leetcode.legostin.bit
+package leetcode.legostin.bit_manipulation
 
 /**
  * The complement of an integer is the integer you get when you flip all the 0's to 1's
