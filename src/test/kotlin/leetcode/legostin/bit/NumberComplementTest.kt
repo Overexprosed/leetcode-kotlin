@@ -1,4 +1,4 @@
-package leetcode.legostin.binary
+package leetcode.legostin.bit
 
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
