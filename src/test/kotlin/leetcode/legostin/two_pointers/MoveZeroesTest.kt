@@ -13,11 +13,4 @@ class MoveZeroesTest {
         target.moveZeroes(nums)
         assertArrayEquals(intArrayOf(1, 2, 3), nums)
     }
-
-    //@Test
-    fun test2() {
-        val nums = intArrayOf(1, 0, 3)
-        target.moveZeroes(intArrayOf(1, 0, 3))
-        assertArrayEquals(intArrayOf(1, 3, 0), nums)
-    }
 }
