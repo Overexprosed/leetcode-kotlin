@@ -1,4 +1,4 @@
-package leetcode.legostin.two_pointers
+package leetcode.legostin.array
 
 /**
  * Merge Sorted Array

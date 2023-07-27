@@ -1,4 +1,4 @@
-package leetcode.legostin.two_pointers
+package leetcode.legostin.array
 
 import org.junit.jupiter.api.Assertions.assertArrayEquals
 import org.junit.jupiter.api.Test
