@@ -50,9 +50,9 @@ class FindInMountainArray {
 
         return -1
     }
-}
 
-interface MountainArray {
-    fun get(index: Int): Int
-    fun length(): Int
+    interface MountainArray {
+        fun get(index: Int): Int
+        fun length(): Int
+    }
 }

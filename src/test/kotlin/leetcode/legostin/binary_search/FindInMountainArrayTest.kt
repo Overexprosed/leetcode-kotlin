@@ -37,7 +37,7 @@ class FindInMountainArrayTest {
 
     class TestMountainArray(
         private val array: IntArray
-    ) : MountainArray {
+    ) : FindInMountainArray.MountainArray {
         override fun get(index: Int): Int = array[index]
         override fun length(): Int = array.size
     }
