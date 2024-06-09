@@ -28,7 +28,3 @@ class ContinuousSubarraySum {
         return false
     }
 }
-
-fun main() {
-    println(0 % 3)
-}
