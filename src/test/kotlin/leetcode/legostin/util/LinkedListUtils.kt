@@ -1,12 +1,13 @@
 package leetcode.legostin.util
 
 import leetcode.legostin.model.ListNode
+import leetcode.legostin.util.LinkedListUtils.Companion.buildListNode
 
 class LinkedListUtils {
 
     companion object {
 
-        fun buildLinkedList(values: List<Int>): ListNode {
+        fun buildListNode(values: List<Int>): ListNode {
             if (values.isEmpty()) {
                 throw RuntimeException("values is empty")
             }
@@ -22,4 +23,8 @@ class LinkedListUtils {
             return head
         }
     }
+}
+
+fun List<Int>.toListNode(): ListNode {
+    return buildListNode(this)
 }
