@@ -12,5 +12,7 @@ class LinkedListUtilsTest {
 
         assertThat(head.value).isEqualTo(1)
         assertThat(head.next!!.value).isEqualTo(2)
+
+        head.toValueList().let { assertThat(it).isEqualTo(listOf(1, 2)) }
     }
 }
