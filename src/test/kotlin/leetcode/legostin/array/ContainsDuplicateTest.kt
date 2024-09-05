@@ -9,19 +9,19 @@ class ContainsDuplicateTest {
 
     @Test
     fun test1() {
-        val result = target.containsDuplicate(intArrayOf(1, 2, 3, 1))
+        val result = target.containsDuplicate2(intArrayOf(1, 2, 3, 1))
         assertThat(result).isTrue
     }
 
     @Test
     fun test2() {
-        val result = target.containsDuplicate(intArrayOf(1, 2, 3, 4))
+        val result = target.containsDuplicate2(intArrayOf(1, 2, 3, 4))
         assertThat(result).isFalse
     }
 
     @Test
     fun test3() {
-        val result = target.containsDuplicate(intArrayOf(1, 1, 1, 3, 3, 4, 3, 2, 4, 2))
+        val result = target.containsDuplicate2(intArrayOf(1, 1, 1, 3, 3, 4, 3, 2, 4, 2))
         assertThat(result).isTrue
     }
 }
