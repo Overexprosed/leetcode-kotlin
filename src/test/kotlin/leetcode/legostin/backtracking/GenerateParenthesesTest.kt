@@ -8,6 +8,6 @@ class GenerateParenthesesTest {
 
     @Test
     fun test1() {
-        target.generateParenthesis(3)
+        target.generateParenthesis(3).also { println(it) }
     }
 }
