@@ -14,10 +14,12 @@ class BestTimeToBuyAndSellStock {
     fun maxProfit(prices: IntArray): Int {
         var maxProfit = 0
         var minPrice = Integer.MAX_VALUE
+
         for (price in prices) {
             minPrice = price.coerceAtMost(minPrice)
             maxProfit = maxProfit.coerceAtLeast(price - minPrice)
         }
+
         return maxProfit
     }
 }

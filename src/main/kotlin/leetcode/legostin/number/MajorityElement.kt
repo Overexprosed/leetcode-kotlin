@@ -1,13 +1,5 @@
 package leetcode.legostin.number
 
-/**
- * Find the element which appears more than half times.
- *
- * ---
- * Boyer–Moore majority vote algorithm.
- * It's like boxing. Wins who beats more than others.
- * Of course if strength of hits are equals :)
- */
 class MajorityElement {
 
     fun majorityElement(nums: IntArray): Int {
@@ -35,10 +27,7 @@ class MajorityElement {
                 count++
             }
         }
-        return if (count > nums.size / 2) {
-            majorityElement
-        } else {
-            -1
-        }
+
+        return if (count > nums.size / 2) majorityElement else -1
     }
 }

@@ -17,9 +17,9 @@ class TwoSum {
             }
             if (sum > target) {
                 pointer2--
-                continue
+            } else {
+                pointer1++
             }
-            pointer1++
         }
         throw IllegalArgumentException("No solution")
     }
