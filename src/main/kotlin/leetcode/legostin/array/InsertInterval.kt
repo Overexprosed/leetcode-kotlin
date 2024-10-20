@@ -1,47 +1,55 @@
 package leetcode.legostin.array
 
+import kotlin.math.max
+import kotlin.math.min
+
 class InsertInterval {
 
-    fun insert(intervals: Array<IntArray>, newInterval: IntArray): Array<IntArray> {
+    fun insert(inIntervals: Array<IntArray>, newInterval: IntArray): Array<IntArray> {
         val result = ArrayList<IntArray>()
+        val intervals = inIntervals.insertInterval(newInterval)
 
-        val arrayWithNewInterval = insertInterval(intervals, newInterval)
+        var pointer = 0
+        while (pointer < intervals.size) {
+            var currentInterval = intervals[pointer]
 
-        var count = 0
-        while (count < arrayWithNewInterval.size) {
-            var curr = intArrayOf(arrayWithNewInterval[count][0], arrayWithNewInterval[count][1])
-            while (count < arrayWithNewInterval.size && doesIntervalsOverlap(curr, arrayWithNewInterval[count])) {
-               curr = mergeIntervals(curr, arrayWithNewInterval[count])
-               count++
+            while (pointer < intervals.size && currentInterval.overlap(intervals[pointer])) {
+               currentInterval = currentInterval.merge(intervals[pointer])
+               pointer++
             }
-            result.add(curr)
+
+            result.add(currentInterval)
         }
+
         return result.toTypedArray()
     }
 
-    private fun doesIntervalsOverlap(a: IntArray, b: IntArray): Boolean =
-        Math.min(a[1], b[1]) - Math.max(a[0], b[0]) >= 0
-
-    private fun mergeIntervals(a: IntArray, b: IntArray): IntArray {
-        val newInterval = IntArray(2)
-        newInterval[0] = Math.min(a[0], b[0])
-        newInterval[1] = Math.max(a[1], b[1])
-        return newInterval
+    private fun IntArray.overlap(other: IntArray): Boolean {
+        return min(this[1], other[1]) - max(this[0], other[0]) >= 0
     }
 
-    private fun insertInterval(intervals: Array<IntArray>, newInterval: IntArray): Array<IntArray> {
-        val newIntervals = intervals.toMutableList()
+    private fun IntArray.merge(other: IntArray): IntArray =
+        IntArray(2).also {
+            it[0] = min(this[0], other[0])
+            it[1] = max(this[1], other[1])
+        }
+
+    private fun Array<IntArray>.insertInterval(newInterval: IntArray): Array<IntArray> {
+        val newIntervals = this.toMutableList()
         var inserted = false
-        for (i in intervals.indices) {
-            if (newInterval[0] < intervals[i][0]) {
+
+        for (i in this.indices) {
+            if (newInterval[0] < this[i][0]) {
                 newIntervals.add(i, newInterval)
                 inserted = true
                 break
             }
         }
+
         if (!inserted) {
             newIntervals.add(newInterval)
         }
+
         return newIntervals.toTypedArray()
     }
 }
