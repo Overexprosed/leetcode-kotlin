@@ -18,6 +18,18 @@ fun List<Int>.toListNode(): ListNode {
     return head
 }
 
+fun ListNode.toListInt(): List<Int> {
+    val result = mutableListOf<Int>()
+    var node: ListNode? = this
+
+    while (node != null) {
+        result.add(node.value)
+        node = node.next
+    }
+
+    return result
+}
+
 /**
  * Не рекомендуется вызывать над ListNode с петлей.
  */
