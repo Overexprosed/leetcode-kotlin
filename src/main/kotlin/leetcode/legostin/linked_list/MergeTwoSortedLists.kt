@@ -12,12 +12,12 @@ class MergeTwoSortedLists {
         if (list1 == null) return list2
         if (list2 == null) return list1
 
+        // mergeTwoLists() returns ListNode with min value, and it will rewrite ListNode.next
+        // first run `if` statement decide which ListNode will be returned as a response
         return if (list1.value < list2.value) {
-            list1.next = mergeTwoLists(list1.next, list2)
-            list1
+            list1.next = mergeTwoLists(list1.next, list2); list1
         } else {
-            list2.next = mergeTwoLists(list1, list2.next)
-            list2
+            list2.next = mergeTwoLists(list1, list2.next); list2
         }
     }
 }
