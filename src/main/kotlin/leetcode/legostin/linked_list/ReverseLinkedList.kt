@@ -12,8 +12,10 @@ class ReverseLinkedList {
         var prevHead: ListNode? = null
 
         while (currHead != null) {
+            // save link to the next to continue ListNode iteration
             val next = currHead.next
 
+            // swap
             currHead.next = prevHead
             prevHead = currHead
 

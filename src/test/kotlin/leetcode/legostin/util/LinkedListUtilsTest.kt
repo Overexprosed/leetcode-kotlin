@@ -6,16 +6,6 @@ import org.junit.jupiter.api.Test
 class LinkedListUtilsTest {
 
     @Test
-    fun testToListNode() {
-        val head = "[1, 2]".toListNode()
-
-        assertThat(head.value).isEqualTo(1)
-        assertThat(head.next!!.value).isEqualTo(2)
-
-        head.toValueList().let { assertThat(it).isEqualTo(listOf(1, 2)) }
-    }
-
-    @Test
     fun testFirstOrNull() {
         val listNode = "[5, 3, 6, 2, 7, 1, 4]".toListNode()
 

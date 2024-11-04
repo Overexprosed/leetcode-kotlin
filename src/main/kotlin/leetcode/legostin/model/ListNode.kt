@@ -5,25 +5,22 @@ data class ListNode (
     var next: ListNode? = null
 ) {
 
-    fun toValueList(): List<Int> {
-        val values = mutableListOf<Int>()
-        var modify: ListNode? = this
-
-        while (modify != null) {
-            values.add(modify.value)
-            modify = modify.next
-        }
-
-        return values
-    }
-
     override fun toString(): String {
         val result = mutableListOf<Int>()
         var node: ListNode? = this
 
+        // prevent endless while if cycle exists
+        var counter = 0
+
         while (node != null) {
+            counter++
+
             result.add(node.value)
             node = node.next
+
+            if (counter == 1_000) {
+                return "Error: cycle detected"
+            }
         }
 
         return result.toString()
