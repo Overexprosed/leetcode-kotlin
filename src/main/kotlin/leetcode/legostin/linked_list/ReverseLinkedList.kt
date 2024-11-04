@@ -10,12 +10,16 @@ class ReverseLinkedList {
     fun reverseList(head: ListNode?): ListNode? {
         var currHead = head
         var prevHead: ListNode? = null
+
         while (currHead != null) {
             val next = currHead.next
+
             currHead.next = prevHead
             prevHead = currHead
+
             currHead = next
         }
+
         return prevHead
     }
 }

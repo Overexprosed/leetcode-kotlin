@@ -1,7 +1,7 @@
 package leetcode.legostin.linked_list
 
-import leetcode.legostin.model.ListNode
-import org.junit.jupiter.api.Assertions.assertEquals
+import leetcode.legostin.util.toListNode
+import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.Test
 
 class ReverseLinkedListTest {
@@ -10,9 +10,9 @@ class ReverseLinkedListTest {
 
     @Test
     fun test1() {
-        val head = ListNode(1, ListNode(2, ListNode(3)))
-        val expected = ListNode(3, ListNode(2, ListNode(1)))
-        val result: ListNode? = target.reverseList(head)
-        assertEquals(expected, result)
+        val head = "[1, 2, 3]".toListNode()
+        val expected = "[3, 2, 1]".toListNode()
+
+        target.reverseList(head).also { assertThat(it).isEqualTo(expected) }
     }
 }

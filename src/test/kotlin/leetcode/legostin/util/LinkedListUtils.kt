@@ -2,7 +2,14 @@ package leetcode.legostin.util
 
 import leetcode.legostin.model.ListNode
 
-fun List<Int>.toListNode(): ListNode {
+fun String.toListNode(): ListNode =
+    this
+        .removeSurrounding("[", "]")
+        .split(", ")
+        .map { it.toInt() }
+        .toListNode()
+
+private fun List<Int>.toListNode(): ListNode {
     if (this.isEmpty()) {
         throw RuntimeException("values is empty")
     }
@@ -16,18 +23,6 @@ fun List<Int>.toListNode(): ListNode {
     }
 
     return head
-}
-
-fun ListNode.toListInt(): List<Int> {
-    val result = mutableListOf<Int>()
-    var node: ListNode? = this
-
-    while (node != null) {
-        result.add(node.value)
-        node = node.next
-    }
-
-    return result
 }
 
 /**

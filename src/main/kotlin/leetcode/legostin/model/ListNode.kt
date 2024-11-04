@@ -16,4 +16,16 @@ data class ListNode (
 
         return values
     }
+
+    override fun toString(): String {
+        val result = mutableListOf<Int>()
+        var node: ListNode? = this
+
+        while (node != null) {
+            result.add(node.value)
+            node = node.next
+        }
+
+        return result.toString()
+    }
 }

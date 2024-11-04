@@ -12,7 +12,7 @@ class LinkedListCycleTest {
 
     @Test
     fun test1() {
-        val listNode = listOf(5, 3, 6, 2, 7, 1, 4).toListNode()
+        val listNode = "[5, 3, 6, 2, 7, 1, 4]".toListNode()
 
         target.hasCycle(listNode).also { assertFalse(it) }
 
