@@ -11,16 +11,23 @@ class RemoveNodeFromTheEnd {
         var fast = head
         var slow = head
 
+        // make a distance between two pointers
         for (i in 0 until n) {
             fast = fast?.next
         }
+
         // case when n == list.size (no way to find previous node to delete next, cause prev does not exist)
-        if (fast == null) return head?.next
+        if (fast == null) {
+            return head?.next
+        }
+
         while (fast?.next != null) {
             fast = fast.next
             slow = slow?.next
         }
-        slow?.next = slow?.next?.next
+
+        slow?.next = slow?.next?.next // actual removal
+
         return head
     }
 }

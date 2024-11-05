@@ -1,6 +1,6 @@
 package leetcode.legostin.two_pointers
 
-import leetcode.legostin.model.ListNode
+import leetcode.legostin.util.toListNode
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Assertions.assertNull
 import org.junit.jupiter.api.Test
@@ -11,38 +11,34 @@ class RemoveNodeFromTheEndTest {
 
     @Test
     fun test1() {
-        val list = ListNode(1, ListNode(2, ListNode(3, ListNode(4, ListNode(5)))))
-        val result = target.removeNthFromEnd(list, 2)
-        assertEquals(
-            ListNode(1, ListNode(2, ListNode(3, ListNode(5)))),
-            result
-        )
+        val head = "[1, 2, 3, 4, 5]".toListNode()
+        val expected = "[1, 2, 3, 5]".toListNode()
+        val actual = target.removeNthFromEnd(head, 2)
+
+        assertEquals(expected, actual)
     }
 
     @Test
     fun test2() {
-        val list = ListNode(1)
-        val result = target.removeNthFromEnd(list, 1)
-        assertNull(result)
+        val head = "[1]".toListNode()
+        target.removeNthFromEnd(head, 1).also { assertNull(it) }
     }
 
     @Test
     fun test3() {
-        val list = ListNode(1, ListNode(2))
-        val result = target.removeNthFromEnd(list, 1)
-        assertEquals(
-            ListNode(1),
-            result
-        )
+        val head = "[1, 2]".toListNode()
+        val expected = "[1]".toListNode()
+        val actual = target.removeNthFromEnd(head, 1)
+
+        assertEquals(expected, actual)
     }
 
     @Test
     fun test4() {
-        val list = ListNode(1, ListNode(2))
-        val result = target.removeNthFromEnd(list, 2)
-        assertEquals(
-            ListNode(2),
-            result
-        )
+        val head = "[1, 2]".toListNode()
+        val expected = "[2]".toListNode()
+        val actual = target.removeNthFromEnd(head, 2)
+
+        assertEquals(expected, actual)
     }
 }
