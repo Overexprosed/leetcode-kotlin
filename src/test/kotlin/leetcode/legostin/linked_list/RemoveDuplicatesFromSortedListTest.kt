@@ -1,6 +1,6 @@
 package leetcode.legostin.linked_list
 
-import leetcode.legostin.model.ListNode
+import leetcode.legostin.util.toListNode
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
 
@@ -10,29 +10,33 @@ class RemoveDuplicatesFromSortedListTest {
 
     @Test
     fun test1() {
-        val testNode = ListNode(1, ListNode(1, ListNode(2))) // [1, 1, 2]
-        val expectedNode = ListNode(1, ListNode(2))
-        assertEquals(expectedNode, target.deleteDuplicates(testNode))
+        val head = "[1, 1, 2]".toListNode()
+        val expected = "[1, 2]".toListNode()
+
+        assertEquals(expected, target.deleteDuplicates(head))
     }
 
     @Test
     fun test2() {
-        val testNode = ListNode(1, ListNode(1, ListNode(2, ListNode(3, ListNode(3))))) // [1, 1, 2, 3, 3]
-        val expectedNode = ListNode(1, ListNode(2, ListNode(3)))
-        assertEquals(expectedNode, target.deleteDuplicates(testNode))
+        val head = "[1, 1, 2, 3, 3]".toListNode()
+        val expected = "[1, 2, 3]".toListNode()
+
+        assertEquals(expected, target.deleteDuplicates(head))
     }
 
     @Test
     fun test3() {
-        val testNode = ListNode(1)
-        val expectedNode = ListNode(1)
-        assertEquals(expectedNode, target.deleteDuplicates(testNode))
+        val head = "[1]".toListNode()
+        val expected = "[1]".toListNode()
+
+        assertEquals(expected, target.deleteDuplicates(head))
     }
 
     @Test
     fun test4() {
-        val testNode = ListNode(3, ListNode(3))
-        val expectedNode = ListNode(3)
-        assertEquals(expectedNode, target.deleteDuplicates(testNode))
+        val head = "[3, 3]".toListNode()
+        val expected = "[3]".toListNode()
+
+        assertEquals(expected, target.deleteDuplicates(head))
     }
 }

@@ -8,22 +8,21 @@ import leetcode.legostin.model.ListNode
  * Given the head of a sorted linked list.
  * Delete all duplicates such that each element appears only once.
  * Return the linked list sorted as well.
- * ---
- * Create 'list' as a temporal variable to not compromise an initial variable
  */
 class RemoveDuplicatesFromSortedList {
 
     fun deleteDuplicates(head: ListNode?): ListNode? {
         if (head == null) return null
 
-        var list = head
-        while (list?.next != null) {
-            if (list.value == list.next?.value) {
-                list.next = list.next?.next
+        var node = head
+        while (node?.next != null) {
+            if (node.value == node.next?.value) {
+                node.next = node.next?.next
             } else {
-                list = list.next
+                node = node.next
             }
         }
+
         return head
     }
 }
