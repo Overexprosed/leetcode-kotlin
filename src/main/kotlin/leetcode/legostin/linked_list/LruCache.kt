@@ -60,7 +60,7 @@ class LruCache(
      * Add after head.
      */
     private fun addNode(node: DLinkedNode) {
-        // head is dummy
+        // head is dummy and should always stay as the first node
         node.pre = head
         node.post = head.post
 
