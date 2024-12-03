@@ -8,12 +8,11 @@ class SameTree {
         if (p == null && q == null) {
             return true
         }
-        if (p == null || q == null) {
+
+        if (p == null || q == null || p.value != q.value) {
             return false
         }
-        if (p.value == q.value) {
-            return isSameTree(p.left, q.left) && isSameTree(p.right, q.right)
-        }
-        return false
+
+        return isSameTree(p.left, q.left) && isSameTree(p.right, q.right)
     }
 }
