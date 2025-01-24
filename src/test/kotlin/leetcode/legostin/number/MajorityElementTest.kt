@@ -9,7 +9,7 @@ class MajorityElementTest {
 
     @Test
     fun test1() {
-        val array1 = intArrayOf(3, 2, 3)
+        val array1 = intArrayOf(2, 3, 3)
         assertEquals(3, target.majorityElement(array1))
     }
 

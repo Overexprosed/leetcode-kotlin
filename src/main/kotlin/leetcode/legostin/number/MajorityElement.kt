@@ -11,7 +11,6 @@ class MajorityElement {
         for (number in nums) {
             if (count == 0) {
                 majorityElement = number
-                count++
             }
             if (majorityElement == number) {
                 count++
