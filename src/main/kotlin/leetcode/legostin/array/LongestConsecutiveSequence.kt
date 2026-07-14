@@ -8,7 +8,7 @@ class LongestConsecutiveSequence {
         var longest = 0
         val set = nums.toHashSet()
 
-        nums.forEach { number ->
+        set.forEach { number ->
             // если не начало последовательности - не интересует
             if (!set.contains(number - 1)) {
                 var length = 0
