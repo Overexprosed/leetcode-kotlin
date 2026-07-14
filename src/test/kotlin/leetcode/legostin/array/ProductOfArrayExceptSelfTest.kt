@@ -9,7 +9,7 @@ class ProductOfArrayExceptSelfTest {
 
     @Test
     fun test1() {
-        val result = target.productExceptSelf2(intArrayOf(1, 2, 3, 4))
+        val result = target.productExceptSelf(intArrayOf(1, 2, 3, 4))
 
         assertThat(result.size).isEqualTo(4)
 
@@ -21,7 +21,7 @@ class ProductOfArrayExceptSelfTest {
 
     @Test
     fun test2() {
-        val result = target.productExceptSelf2(intArrayOf(1, 1))
+        val result = target.productExceptSelf(intArrayOf(1, 1))
 
         assertThat(result.size).isEqualTo(2)
 
@@ -31,7 +31,7 @@ class ProductOfArrayExceptSelfTest {
 
     @Test
     fun test3() {
-        val result = target.productExceptSelf2(intArrayOf(0, 0))
+        val result = target.productExceptSelf(intArrayOf(0, 0))
 
         assertThat(result.size).isEqualTo(2)
 

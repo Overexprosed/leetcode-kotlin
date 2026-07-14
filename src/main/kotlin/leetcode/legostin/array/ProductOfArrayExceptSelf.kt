@@ -17,7 +17,6 @@ class ProductOfArrayExceptSelf {
     fun productExceptSelf(nums: IntArray): IntArray {
         // Получаем все умноженные элементы от i-го слева
         val prefixArray = IntArray(nums.size)
-        // 1 - все умноженные элементы справа от i
         prefixArray[0] = 1
         for (i in 1 until nums.size) {
             prefixArray[i] = prefixArray[i - 1] * nums[i - 1]
@@ -34,36 +33,6 @@ class ProductOfArrayExceptSelf {
         val result = IntArray(nums.size)
         for (i in result.indices) {
             result[i] = prefixArray[i] * suffixArray[i]
-        }
-
-        return result
-    }
-
-    /**
-     * Результат строим на ходу, чтобы уменьшить память.
-     *
-     * В первом вариант i результирующего массива строится:
-     * result[i] = prefixArray[i] * suffixArray[i]
-     *
-     * Мы можем повторить построение префикса сразу в результирующий массив.
-     * И на нем же повторить построение суффикса.
-     */
-    fun productExceptSelf2(nums: IntArray): IntArray {
-        val result = IntArray(nums.size) { 1 }
-
-        // Повторяем построение префикса
-        var current = 1
-        for (i in 1 until nums.size) {
-            current *= nums[i - 1]
-            result[i] = current
-        }
-
-        // Повторяем построение суффикса
-        current = 1
-        for (i in nums.size - 1 downTo 0) {
-            result[i] *= current
-            // записывание в current равносильно записыванию в отдельный массив
-            current *= nums[i]
         }
 
         return result
