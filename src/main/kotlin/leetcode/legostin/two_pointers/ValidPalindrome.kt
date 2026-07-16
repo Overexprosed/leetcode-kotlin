@@ -7,17 +7,22 @@ class ValidPalindrome {
         var pointer2 = s.length - 1
 
         while (pointer1 <= pointer2) {
-            if (!s.elementAt(pointer1).isLetterOrDigit()) {
+            val char1 = s[pointer1]
+            if (!char1.isLetterOrDigit()) {
                 pointer1++
                 continue
             }
-            if (!s.elementAt(pointer2).isLetterOrDigit()) {
+
+            val char2 = s[pointer2]
+            if (!char2.isLetterOrDigit()) {
                 pointer2--
                 continue
             }
-            if (!s.elementAt(pointer1).equals(s.elementAt(pointer2), true)) {
+
+            if (!char1.equals(char2, true)) {
                 return false
             }
+
             pointer1++
             pointer2--
         }
