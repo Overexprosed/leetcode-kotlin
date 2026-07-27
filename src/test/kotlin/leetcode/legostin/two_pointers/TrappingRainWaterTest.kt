@@ -24,4 +24,10 @@ class TrappingRainWaterTest {
         val result = target.trap(height = intArrayOf(5, 4, 3, 2, 1))
         assertThat(result).isEqualTo(0)
     }
+
+    @Test
+    fun test4() {
+        val result = target.trap(height = intArrayOf(5, 0, 5))
+        assertThat(result).isEqualTo(5)
+    }
 }

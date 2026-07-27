@@ -34,6 +34,7 @@ class ThreeSum {
                     result.add(innerList)
 
                     pointer1++
+                    // проверка дубликата
                     while (nums[pointer1] == nums[pointer1 - 1] && pointer1 < pointer2) {
                         pointer1++
                     }

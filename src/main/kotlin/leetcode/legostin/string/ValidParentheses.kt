@@ -30,18 +30,20 @@ import java.util.Stack
  */
 class ValidParentheses {
 
+    private val closeToOpen = mapOf(
+        ')' to '(',
+        ']' to '[',
+        '}' to '{',
+    )
+
     fun isValid(s: String): Boolean {
         if (s.isEmpty()) return false
 
-        val map = HashMap<Char, Char>()
-        map[')'] = '('
-        map[']'] = '['
-        map['}'] = '{'
-
         val stack = Stack<Char>()
         val charArray = s.toCharArray()
+
         for (c in charArray) {
-            if (stack.isNotEmpty() && stack.peek() == map[c]) {
+            if (stack.isNotEmpty() && stack.peek() == closeToOpen[c]) {
                 stack.pop()
             } else {
                 stack.push(c)
